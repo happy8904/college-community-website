@@ -5,6 +5,7 @@
   padding: 15px 40px;
   background-color: #1e1e2f;
   color: white;
+  gap: 1%;
 }
 
 .navbar-logo a {
@@ -16,7 +17,8 @@
 
 .navbar-links {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  gap: 10%;
   list-style: none;
 }
 

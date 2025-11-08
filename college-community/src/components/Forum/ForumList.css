@@ -3,6 +3,11 @@
   margin: auto;
 }
 
+.forum-list h2{
+  color: rgb(121, 121, 247);
+}
+
+
 .new-post-btn {
   background-color: #004aad;
   color: white;

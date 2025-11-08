@@ -4,8 +4,8 @@
 }
 
 .home-container h1 {
-  color: #004aad;
-}
+    color: rgb(121, 121, 247);
+  }
 
 .home-container p {
   max-width: 600px;
