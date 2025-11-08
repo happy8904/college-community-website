@@ -18,6 +18,12 @@
   margin-top: 20px;
 }
 
+.event-list p{
+  color: rgb(73, 72, 72);
+  background-color: rgb(170, 169, 169);
+  width: 30%;
+}
+
 .event-item {
   background: #f2f2f2;
   padding: 8px;

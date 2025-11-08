@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.login-container h2{
+  color: rgb(121, 121, 247);
+}
+
 .login-container form {
   display: flex;
   flex-direction: column;

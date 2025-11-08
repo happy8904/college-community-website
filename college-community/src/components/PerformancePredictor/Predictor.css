@@ -3,6 +3,10 @@
   margin-top: 30px;
 }
 
+h2{
+  color: rgb(121, 121, 247);
+}
+
 .predictor-container input {
   padding: 8px;
   margin: 8px;
