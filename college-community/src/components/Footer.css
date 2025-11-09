@@ -1,7 +1,72 @@
+/* src/components/Footer.css */
+
 .footer {
-  background-color: #004aad;
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding-top: 2.5rem;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.footer-section p {
+    opacity: 0.8;
+}
+
+.footer-section a {
+  display: block;
+  color: var(--color-text-light);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-section a:hover {
+  color: var(--color-accent);
+  opacity: 1;
+  transform: translateX(3px); /* Subtle transition effect */
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
   text-align: center;
-  padding: 12px 0;
-  font-size: 14px;
+  font-size: 0.85rem;
+  background-color: #164282; /* Slightly darker shade */
+}
+
+/* ------------------
+   Responsiveness 
+   ------------------ */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .footer-section a {
+      justify-content: center;
+  }
+
+  .footer-section h3,
+  .footer-section h4 {
+      margin-top: 1.5rem;
+  }
 }

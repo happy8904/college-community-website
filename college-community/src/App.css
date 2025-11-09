@@ -1,28 +1,12 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
+/* src/App.css */
 
-.app-container {
+.App {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 100vw; 
-  background-color: #f9f9fb;
-  font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
 }
 
-.main-content {
-  flex: 1;
-  width: 100%;
-  padding: 20px;
-  margin: 0;
-  box-sizing: border-box;
+main {
+  flex-grow: 1;
+  padding-top: 60px; /* Space for fixed Navbar */
 }
-
-

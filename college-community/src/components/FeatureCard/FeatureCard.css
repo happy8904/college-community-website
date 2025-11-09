@@ -1,0 +1,52 @@
+/* src/components/FeatureCard/FeatureCard.css */
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--color-background-dark);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px var(--color-shadow);
+  text-decoration: none;
+  color: var(--color-text-dark);
+  border: 1px solid transparent;
+  transform: translateY(0);
+}
+
+/* Transition: Lift effect on hover */
+.feature-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-primary);
+  transform: translateY(-5px); 
+}
+
+.card-icon {
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .card-icon {
+    transform: scale(1.1);
+}
+
+.feature-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #6c757d;
+  flex-grow: 1;
+}
+
+.card-cta {
+    margin-top: 1rem;
+    color: var(--color-accent);
+    font-weight: 600;
+}
