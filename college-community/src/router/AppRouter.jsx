@@ -1,21 +1,20 @@
+// src/router/AppRouter.jsx
 
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from '../App.jsx';
 
-import AuthLayout from './AuthLayout.jsx';
+
 import Home from '../pages/Home.jsx';
 import Dashboard from '../pages/Dashboard.jsx';
 import Events from '../pages/Events.jsx';
-import Login from '../pages/Login.jsx';     
-import Signup from '../pages/Signup.jsx';   
+import AuthPage from '../pages/AuthPage.jsx'; 
 
 
-import Forum from '../components/Forum/ForumList.jsx'; 
+import Forum from '../components/Forum/ForumList.jsx';
 import Chatbot from '../components/Chatbot/Chatbot.jsx';
 import Predictor from '../components/PerformancePredictor/Predictor.jsx';
 import Notes from '../components/NotesSummarizer/NotesSummarizer.jsx'; 
-
 
 const AppRouter = () => {
   return (
@@ -23,13 +22,13 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<App />}>
           
+          
           <Route index element={<Home />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="events" element={<Events />} />
           
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
-          
+          <Route path="login" element={<AuthPage />} />
+          <Route path="signup" element={<AuthPage />} />
           
           <Route path="forum" element={<Forum />} />
           <Route path="chatbot" element={<Chatbot />} />

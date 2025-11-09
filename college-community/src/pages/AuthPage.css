@@ -1,0 +1,296 @@
+/* src/pages/AuthPage.css */
+
+/* --- Base Setup --- */
+:root {
+  --color-primary: #1a50a1; 
+  --color-accent: #ffc107; 
+  --color-background-light: #f8f9fa;
+  --color-text-dark: #343a0;
+  --color-text-light: #ffffff;
+}
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Use 100vh to ensure it fills the available screen space */
+  min-height: calc(100vh - 60px); 
+  background: var(--color-background-light);
+  padding: 2rem 1rem;
+}
+
+.auth-container {
+  background-color: var(--color-background-light);
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
+              0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 800px; 
+  max-width: 100%;
+  min-height: 500px;
+}
+
+/* --- Form Container (The Sliding Part) --- */
+
+.forms-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.form-panel {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.login-panel {
+    left: 0;
+    opacity: 1;
+}
+
+.signup-panel {
+    /* Positioned off-screen to the right */
+    left: 100%;
+    opacity: 0; 
+}
+
+
+/* --- Auth Form Styles --- */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3rem;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.auth-form h2 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+
+.input-group {
+  background-color: #eee;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.input-icon {
+  color: var(--color-primary);
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.input-group input {
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1.2rem;
+  font-size: 0.85rem;
+}
+
+/* Button Styles */
+.btn-primary-auth {
+  background-color: var(--color-accent);
+  color: var(--color-text-dark);
+  border: 1px solid var(--color-accent);
+  padding: 0.75rem 2.5rem;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary-auth:hover {
+  background-color: #ffb300;
+  transform: scale(1.05);
+}
+
+/* --- Overlay Panel (The Animated Background) --- */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.overlay {
+  background: linear-gradient(to right, #1a50a1, #306eb5); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: var(--color-text-light);
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3rem;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-right {
+  right: 0; /* Starts visible when Login is active */
+  transform: translateX(0);
+}
+
+.overlay-left {
+  left: 0;
+  transform: translateX(-20%); /* Starts hidden */
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border: 2px solid var(--color-text-light);
+  color: var(--color-text-light);
+  padding: 0.75rem 2.5rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* --- Animation State: SIGN UP ACTIVE --- */
+
+.auth-container.right-panel-active .forms-container {
+  /* Forms container moves to the right */
+  transform: translateX(100%); 
+}
+
+.auth-container.right-panel-active .forms-container .login-panel {
+    /* Fade out and move login */
+    opacity: 0; 
+    transform: translateX(20%);
+}
+
+.auth-container.right-panel-active .forms-container .signup-panel {
+    /* Move signup into view */
+    opacity: 1;
+    transform: translateX(-100%); /* Counter-move to stay in place */
+}
+
+
+.auth-container.right-panel-active .overlay-container {
+  /* Overlay container moves to the left to fill the vacated space */
+  transform: translateX(-100%);
+}
+
+.auth-container.right-panel-active .overlay {
+  /* Overlay itself slides to expose the other panel content */
+  transform: translateX(50%);
+}
+
+.auth-container.right-panel-active .overlay-left {
+  /* Overlay Left slides in */
+  transform: translateX(0);
+}
+
+.auth-container.right-panel-active .overlay-right {
+  /* Overlay Right slides out */
+  transform: translateX(20%);
+}
+
+
+/* --- Responsiveness (Mobile) --- */
+
+@media (max-width: 768px) {
+  .auth-wrapper {
+    padding: 0;
+    min-height: 100vh;
+  }
+  
+  .auth-container {
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Hide the overlay completely on mobile */
+  .overlay-container {
+    display: none; 
+  }
+  
+  /* Make the form container fill the width */
+  .forms-container {
+    width: 100%;
+    left: 0;
+    /* Use height 100% to fill vertical space */
+    height: 100%; 
+    transition: none; /* Disable sliding on mobile */
+  }
+
+  .form-panel {
+    width: 100%;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  }
+
+  .login-panel {
+    /* Base position */
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 2;
+  }
+  
+  .signup-panel {
+    /* Initially hidden state */
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  /* Mobile transition: Slide/Fade using the active class */
+  .auth-container.right-panel-active .login-panel {
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  .auth-container.right-panel-active .signup-panel {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 2; 
+  }
+
+  /* Adjust form padding for mobile */
+  .auth-form {
+    padding: 2rem 1rem;
+    padding-top: 4rem; 
+  }
+}
