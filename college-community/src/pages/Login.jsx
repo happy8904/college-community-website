@@ -1,16 +1,9 @@
-// src/pages/Login.jsx// src/pages/Login.jsx
-
-
-
- 
-
-// ... rest of the component
 
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { IoMailOutline, IoLockClosedOutline, IoLogoGoogle } from 'react-icons/io5';
-import AuthLayout from './AuthLayout'; // Import the new layout component
-import './Login.css';
+import AuthLayout from './AuthLayout'; 
+import './Signup.css';
 
 
 const LoginForm = () => (

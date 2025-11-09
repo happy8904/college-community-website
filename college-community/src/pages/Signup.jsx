@@ -2,7 +2,7 @@
 import React from 'react';
 import { IoMailOutline, IoLockClosedOutline, IoPersonOutline, IoLogoGoogle } from 'react-icons/io5';
 import AuthLayout from './AuthLayout';
-import './Login.css';
+import './Signup.css';
 
 
 const SignUpForm = () => (
