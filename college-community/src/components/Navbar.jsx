@@ -6,7 +6,6 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        {/* If logo missing, show text fallback */}
         <Link to="/">College Community</Link>
       </div>
 
@@ -17,7 +16,7 @@ function Navbar() {
         <li><Link to="/chatbot">Chatbot</Link></li>
         <li><Link to="/predictor">Predictor</Link></li>
         <li><Link to="/notes">Notes</Link></li>
-        <li><Link to="/events">Events</Link></li>
+        <li><Link to="/events">Events</Link></li> {/* CRUD EVENTS PAGE */}
       </ul>
 
       <div className="navbar-auth">

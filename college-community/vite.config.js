@@ -10,4 +10,8 @@ export default defineConfig({
       },
     }),
   ],
+  server: {
+    port: 5173,     // <-- force VITE to always run on 5173
+    host: true,
+  },
 })
