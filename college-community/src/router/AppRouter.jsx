@@ -2,13 +2,14 @@
 
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AuthComp from '../pages/AuthComponents.jsx'; 
 import App from '../App.jsx';
 
 
 import Home from '../pages/Home.jsx';
 import Dashboard from '../pages/Dashboard.jsx';
 import Events from '../pages/Events.jsx';
-import AuthPage from '../pages/AuthPage.jsx'; 
+
 
 
 import Forum from '../components/Forum/ForumList.jsx';

@@ -4,7 +4,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { IoMailOutline, IoLockClosedOutline, IoPersonOutline, IoLogoGoogle } from 'react-icons/io5';
 import './AuthPage.css'; 
 
-const AuthPage = () => {
+const AuthComp = () => {
   const location = useLocation();
   const [isSignUp, setIsSignUp] = useState(location.pathname === '/signup');
 
@@ -127,4 +127,4 @@ const AuthPage = () => {
   );
 };
 
-export default AuthPage;
+export default AuthComp;
